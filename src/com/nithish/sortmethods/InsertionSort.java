@@ -1,11 +1,11 @@
-package com.nithish;
+package com.nithish.sortmethods;
 
 import java.util.Arrays;
 
 public class InsertionSort {
     public static void main(String[] args) {
         int[] arr = {5, 4, 1, 3, 2, -44, -80};
-        insertion1(arr);
+        ins(arr);
         System.out.println(Arrays.toString(arr));
     }
     static void insertion(int[] arr){
@@ -26,6 +26,17 @@ public class InsertionSort {
             while(j >= 0 && key < arr[j]){
                 arr[j + 1] = arr[j];
                 j -= 1;
+            }
+            arr[j + 1] = key;
+        }
+    }
+    static void ins(int[] arr){
+        for(int i = 1; i < arr.length; i++){
+            int key = arr[i];
+            int j = i - 1;
+            while(j >= 0 && key < arr[j]){
+                arr[j + 1] = arr[j];
+                j--;
             }
             arr[j + 1] = key;
         }

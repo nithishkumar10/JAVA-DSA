@@ -1,21 +1,21 @@
-package com.nithish;
+package com.nithish.sortmethods;
 
 import java.util.Arrays;
 
 public class MergeSort {
     public static void main(String[] args) {
-        int[] arr = {5, 4, 3, 2, 1};
-        mergeSort(arr, 0, arr.length);
-        System.out.println(Arrays.toString(arr));
+        int[] arr = {4,1,3,9,7};
+        int[] ans = mergeSort2(arr);
+        System.out.println(Arrays.toString(ans));
 
     }
-    static int[] mergeSort(int[] arr){
+    static int[] mergeSort2(int[] arr){
         if(arr.length == 1){
             return arr;
         }
-        int mid = arr.length / 2 ;
-        int[] left = mergeSort(Arrays.copyOfRange(arr, 0, mid));
-        int[] right = mergeSort(Arrays.copyOfRange(arr, mid, arr.length));
+        int mid = arr.length / 2;
+        int[] left = mergeSort2(Arrays.copyOfRange(arr, 0, mid));
+        int[] right = mergeSort2(Arrays.copyOfRange(arr, mid, arr.length));
         return merge(left, right);
     }
     static int[] merge(int[] first, int[] second){
@@ -44,47 +44,42 @@ public class MergeSort {
 
         return mix;
     }
-
-
-
-
-
-    static void mergeSort(int[] arr, int s, int e){
-        if(e - s == 1){
-            return;
-        }
-        int mid = (s + e) / 2;
-        mergeSort(arr, s, mid);
-        mergeSort(arr, mid, e);
-        merge(arr, s, mid, e);
-    }
-    static void merge(int[] arr, int s, int m, int e){
-        int[] mix = new int[e - s];
-        int i = s, j = m, k = 0;
-        while(i < m && j < e){
-            if(arr[i] < arr[j]){
-                mix[k] = arr[i];
-                i++;
-            }
-            else {
-                mix[k] = arr[j];
-                j++;
-            }
-            k++;
-        }
-        while (i < m){
-            mix[k] = arr[i];
-            i++;
-            k++;
-
-        }
-        while(j < e){
-            mix[k] = arr[j];
-            j++;
-            k++;
-        }
-        System.arraycopy(mix, 0, arr, s + 0, mix.length);
-    }
+//    static void mergeSort1(int[] arr, int s, int e){
+//        if(e - s == 1){
+//            return;
+//        }
+//        int mid = (s + e) / 2;
+//        mergeSort(arr, s, mid);
+//        mergeSort(arr, mid, e);
+//        merge(arr, s, mid, e);
+//    }
+//    static void merge1(int[] arr, int s, int m, int e){
+//        int[] mix = new int[e - s];
+//        int i = s, j = m, k = 0;
+//        while(i < m && j < e){
+//            if(arr[i] < arr[j]){
+//                mix[k] = arr[i];
+//                i++;
+//            }
+//            else {
+//                mix[k] = arr[j];
+//                j++;
+//            }
+//            k++;
+//        }
+//        while (i < m){
+//            mix[k] = arr[i];
+//            i++;
+//            k++;
+//
+//        }
+//        while(j < e){
+//            mix[k] = arr[j];
+//            j++;
+//            k++;
+//        }
+//        System.arraycopy(mix, 0, arr, s + 0, mix.length);
+//    }
 
 
 }

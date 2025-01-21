@@ -1,4 +1,4 @@
-package Strings.com;
+package com.nithish.stringsexamples;
 
 import java.util.ArrayList;
 
