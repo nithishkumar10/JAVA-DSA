@@ -5,20 +5,21 @@ import java.util.Arrays;
 public class BinarySearch {
     public static void main(String[] args) {
           // For 1D Array
-//        int[] arr = new int[]{1,2,3,4,5,6,8,90,900,9000};
-//        int target = 900;
+        int[] arr = new int[]{1,2,3,4,5,6,8,90,900,9000};
+        int target = 900;
+        System.out.println(recurseBinarySearch(arr, target, 0, arr.length - 1));
 //        int index = binarySearch(arr, target);
 //        System.out.println("The index of " + target + " is " + index);
 
         // For 2D Array
-        int[][] matrix = {
-                {10, 20, 30, 40},
-                {15, 25, 35, 45},
-                {19, 26, 37, 46},
-                {21, 28, 38, 49}
-        };
-        int[] ans = binarySearch2DArray(matrix, 25);
-        System.out.println(Arrays.toString(ans));
+//        int[][] matrix = {
+//                {10, 20, 30, 40},
+//                {15, 25, 35, 45},
+//                {19, 26, 37, 46},
+//                {21, 28, 38, 49}
+//        };
+//        int[] ans = binarySearch2DArray(matrix, 25);
+//        System.out.println(Arrays.toString(ans));
     }
 
      static int binarySearch(int[] arr, int target) {
@@ -53,5 +54,18 @@ public class BinarySearch {
             }
         }
         return new int[]{-1, -1};
+    }
+    static int recurseBinarySearch(int[] arr, int target, int s, int e){
+        if(s > e){
+            return -1;
+        }
+        int m = s + (e - s) / 2;
+        if(arr[m] == target){
+            return m;
+        }
+        if(target < arr[m]){
+            return recurseBinarySearch(arr, target, s, m - 1);
+        }
+        return recurseBinarySearch(arr, target, m + 1, e);
     }
 }
