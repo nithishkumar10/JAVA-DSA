@@ -1,4 +1,4 @@
-package com.nithish;
+package com.nithish.sortmethods;
 
 import java.util.Arrays;
 
