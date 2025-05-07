@@ -1,7 +1,7 @@
 package oops.polymorphism;
 
 public class Square extends Shape{
-    @Override
+//    @Override
     void area(){
         System.out.println("In the Squares");
     }

@@ -25,5 +25,9 @@ public class Box {
         this.w = w;
     }
 
+    public void information(){
+        System.out.println("In the Box class");
+    }
+
 
 }

@@ -4,7 +4,7 @@ public class Shape {
     public Shape(){
         System.out.println("in shape");
     }
-    void area(){
+    private void area(){
         System.out.println("In the Shapes");
     }
     void new1(){
